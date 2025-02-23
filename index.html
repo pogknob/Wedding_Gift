@@ -86,13 +86,14 @@
 
         function createGlitter() {
             const glitterContainer = document.getElementById('glitter');
-            for (let i = 0; i < 50; i++) {
+            setInterval(() => {
                 let sparkle = document.createElement('span');
                 sparkle.style.left = Math.random() * window.innerWidth + 'px';
                 sparkle.style.top = Math.random() * window.innerHeight + 'px';
                 sparkle.style.animationDelay = Math.random() + 's';
                 glitterContainer.appendChild(sparkle);
-            }
+                setTimeout(() => sparkle.remove(), 1000);
+            }, 100);
         }
     </script>
 </body>
